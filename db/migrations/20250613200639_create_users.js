@@ -4,7 +4,7 @@ export function up(knex) {
     table.string('name');
     table.string('username').notNullable().unique();
     table.string('email').notNullable().unique();
-    table.string('password').notNullable().defaultTo('123456');
+    table.string('password').notNullable();
     table.string('role').defaultTo('user'); // admin/parcial/user
     table.integer('xp').defaultTo(0);
     table.timestamp('created_at').defaultTo(knex.fn.now());
