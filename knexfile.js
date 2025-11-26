@@ -2,13 +2,13 @@ import path from 'path';
 
 export default {
   development: {
-    client: 'sqlite3',
+    client: 'sqlite3', // driver do SQLite
     connection: {
-      filename: path.resolve('db', 'dev.sqlite3') // <- fora do src
+      filename: path.resolve('db', 'dev.sqlite3') // caminho absoluto para o arquivo do banco
     },
-    useNullAsDefault: true,
+    useNullAsDefault: true, // necessário para SQLite (evita warnings do Knex)
     migrations: {
-      directory: path.resolve('db', 'migrations') // <- fora do src
+      directory: path.resolve('db', 'migrations') // onde ficam os arquivos de migração
     }
   }
 };
